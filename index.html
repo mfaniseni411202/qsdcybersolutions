@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QSD Cyber Solutions | Cybersecurity & Web Design South Africa</title>
+    <meta name="description" content="QSD Cyber Solutions provides enterprise-grade cybersecurity, web design, and cloud solutions in South Africa. POPIA & GDPR compliant.">
+    <meta name="keywords" content="cybersecurity, web design, cloud solutions, POPIA, GDPR, South Africa, Durban">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="QSD Cyber Solutions | Cybersecurity & Web Design">
+    <meta property="og:description" content="Enterprise-grade cybersecurity and web solutions in South Africa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qsdcybersolutions.co.za">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://qsdcybersolutions.co.za/">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ===== QSD BACKGROUND STYLES ===== -->
+    <style>
+        /* ========================================
+           QSD LOGO BACKGROUND PATTERN
+           ======================================== */
+        .qsd-bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 30px 50px;
+            padding: 40px;
+            opacity: 0.06;
+        }
+
+        .qsd-bg-pattern .qsd-logo-bg {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #00d4ff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+            letter-spacing: 4px;
+            animation: qsdFloat 15s infinite ease-in-out;
+            opacity: 0.5;
+            transition: opacity 3s ease;
+        }
+
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(1) { animation-delay: 0s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(2) { animation-delay: 0.8s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(3) { animation-delay: 1.6s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(4) { animation-delay: 2.4s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(5) { animation-delay: 3.2s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(6) { animation-delay: 4.0s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(7) { animation-delay: 0.4s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(8) { animation-delay: 1.2s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(9) { animation-delay: 2.0s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(10) { animation-delay: 2.8s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(11) { animation-delay: 3.6s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(12) { animation-delay: 4.4s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(13) { animation-delay: 0.6s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(14) { animation-delay: 1.4s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(15) { animation-delay: 2.2s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(16) { animation-delay: 3.0s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(17) { animation-delay: 3.8s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(18) { animation-delay: 4.6s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(19) { animation-delay: 0.2s; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(20) { animation-delay: 1.0s; }
+
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+1) { font-size: 4rem; opacity: 0.4; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+2) { font-size: 2.8rem; opacity: 0.6; }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+3) { font-size: 3.8rem; opacity: 0.3; }
+
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(4n+1) { transform: rotate(-3deg); }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(4n+2) { transform: rotate(5deg); }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(4n+3) { transform: rotate(-7deg); }
+        .qsd-bg-pattern .qsd-logo-bg:nth-child(4n+4) { transform: rotate(4deg); }
+
+        @keyframes qsdFloat {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+            }
+            25% {
+                transform: translateY(-8px) scale(1.02);
+            }
+            50% {
+                transform: translateY(5px) scale(0.98);
+            }
+            75% {
+                transform: translateY(-4px) scale(1.01);
+            }
+        }
+
+        /* Content sits above background */
+        .site-header,
+        .hero,
+        .services-overview,
+        .security-teaser,
+        .testimonials,
+        .cta-section,
+        .site-footer,
+        main,
+        footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .qsd-bg-pattern {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 20px 30px;
+                padding: 20px;
+                opacity: 0.04;
+            }
+            .qsd-bg-pattern .qsd-logo-bg {
+                font-size: 2.5rem;
+            }
+            .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+1) { font-size: 3rem; }
+            .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+2) { font-size: 2rem; }
+            .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+3) { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            .qsd-bg-pattern {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 15px 20px;
+                padding: 15px;
+                opacity: 0.03;
+            }
+            .qsd-bg-pattern .qsd-logo-bg {
+                font-size: 2rem;
+            }
+            .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+1) { font-size: 2.4rem; }
+            .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+2) { font-size: 1.6rem; }
+            .qsd-bg-pattern .qsd-logo-bg:nth-child(3n+3) { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== QSD LOGO BACKGROUND PATTERN ===== -->
+    <div class="qsd-bg-pattern" aria-hidden="true">
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+        <span class="qsd-logo-bg">QSD</span>
+    </div>
+
+    <!-- Skip to main content - Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner" class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- Logo with Pixar-style animation -->
+                <div class="logo-container">
+                    <a href="/" aria-label="QSD Cyber Solutions Home">
+                        <div class="logo-wrapper">
+                            <div class="logo-light-source" aria-hidden="true">
+                                <div class="light-beam"></div>
+                            </div>
+                            <div class="logo-letters">
+                                <span class="logo-letter" style="color: #00d4ff;">Q</span>
+                                <span class="logo-letter" style="color: #ffffff;">S</span>
+                                <span class="logo-letter" style="color: #00d4ff;">D</span>
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-subtitle">CYBER SOLUTIONS</span>
+                                <span class="logo-subtitle-small">SOUTH AFRICA PTY(LTD) · EST. 2026</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav role="navigation" aria-label="Main navigation" class="main-nav">
+                    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="nav-menu" class="nav-menu" role="menubar">
+                        <li role="none"><a href="/" role="menuitem" aria-current="page">Home</a></li>
+                        <li role="none"><a href="/about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="/services.html" role="menuitem">Services</a></li>
+                        <li role="none"><a href="/security-practices.html" role="menuitem">Security Practices</a></li>
+                        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="/contact.html" role="menuitem" class="nav-cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-badge">EST. 2026 · SOUTH AFRICA</div>
+                        <h1 id="hero-title">Secure Your Digital <span class="highlight">Future Today</span></h1>
+                        <p class="hero-description">
+                            Enterprise-grade cybersecurity, web design, and cloud solutions tailored for 
+                            South African businesses. POPIA &amp; GDPR compliant from day one.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="/contact.html" class="btn btn-primary">Get Started</a>
+                            <a href="/services.html" class="btn btn-secondary">Our Services</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Security Focused</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Protection</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">POPIA</span>
+                                <span class="stat-label">Compliant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image" aria-hidden="true">
+                        <div class="hero-graphic">
+                            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="200" cy="200" r="180" stroke="#00d4ff" stroke-width="2" opacity="0.2"/>
+                                <circle cx="200" cy="200" r="140" stroke="#00d4ff" stroke-width="2" opacity="0.3"/>
+                                <circle cx="200" cy="200" r="100" stroke="#00d4ff" stroke-width="2" opacity="0.4"/>
+                                <path d="M200 80 L220 150 L290 170 L230 210 L250 280 L200 240 L150 280 L170 210 L110 170 L180 150 L200 80Z" fill="#00d4ff" opacity="0.3"/>
+                                <path d="M200 100 L215 155 L270 170 L225 200 L240 255 L200 225 L160 255 L175 200 L130 170 L185 155 L200 100Z" fill="#00d4ff" opacity="0.5"/>
+                                <circle cx="200" cy="180" r="20" fill="#00d4ff" opacity="0.8"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Overview -->
+        <section class="services-overview" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What We Do</span>
+                    <h2 id="services-title">Our Core Services</h2>
+                    <p>Comprehensive cybersecurity and technology solutions for modern businesses.</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">🛡️</div>
+                        <h3>Web Design &amp; Development</h3>
+                        <p>Secure, responsive websites with built-in security, accessibility, and performance optimization.</p>
+                        <a href="/services.html#web-design" aria-label="Learn more about Web Design">Learn More →</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">🔍</div>
+                        <h3>Threat Detection</h3>
+                        <p>Advanced monitoring and detection systems to identify and neutralize threats before they impact your business.</p>
+                        <a href="/services.html#threat-detection" aria-label="Learn more about Threat Detection">Learn More →</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">☁️</div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Secure cloud infrastructure, migration, and management with enterprise-grade encryption and compliance.</p>
+                        <a href="/services.html#cloud-solutions" aria-label="Learn more about Cloud Solutions">Learn More →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Security Practices Teaser -->
+        <section class="security-teaser" aria-labelledby="security-title">
+            <div class="container">
+                <div class="security-teaser-grid">
+                    <div class="security-teaser-content">
+                        <span class="section-tag">Our Approach</span>
+                        <h2 id="security-title">Security-First Development</h2>
+                        <p>We build security into everything we create. From HTTPS enforcement to POPIA compliance, we ensure your data and your clients' data are protected.</p>
+                        <ul class="security-features">
+                            <li>✓ HTTPS &amp; TLS Encryption</li>
+                            <li>✓ Content Security Policy (CSP)</li>
+                            <li>✓ POPIA &amp; GDPR Compliant</li>
+                            <li>✓ Regular Security Audits</li>
+                        </ul>
+                        <a href="/security-practices.html" class="btn btn-primary">View Our Security Practices</a>
+                    </div>
+                    <div class="security-teaser-image" aria-hidden="true">
+                        <div class="security-shield">
+                            <svg viewBox="0 0 200 200" fill="none">
+                                <path d="M100 10 L180 50 L180 120 C180 160 140 190 100 190 C60 190 20 160 20 120 L20 50 L100 10Z" stroke="#00d4ff" stroke-width="3" fill="none"/>
+                                <path d="M100 30 L160 60 L160 120 C160 150 130 170 100 170 C70 170 40 150 40 120 L40 60 L100 30Z" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+                                <path d="M80 100 L95 115 L125 85" stroke="#00d4ff" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Testimonials</span>
+                    <h2 id="testimonials-title">What Our Clients Say</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card">
+                        <p>"QSD Cyber Solutions transformed our digital infrastructure. Their security-first approach gave us peace of mind."</p>
+                        <cite>
+                            <span class="client-name">John Doe</span>
+                            <span class="client-company">TechPro SA</span>
+                        </cite>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p>"The web design and security compliance work was outstanding. They truly understand the South African market."</p>
+                        <cite>
+                            <span class="client-name">Jane Smith</span>
+                            <span class="client-company">SecureData Solutions</span>
+                        </cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title">Ready to Secure Your Business?</h2>
+                    <p>Get a free consultation and security assessment for your website or application.</p>
+                    <a href="/contact.html" class="btn btn-primary btn-large">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo" class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="footer-logo-letter">QSD</span>
+                        <span class="footer-logo-text">Cyber Solutions</span>
+                    </div>
+                    <p>Enterprise-grade cybersecurity and web solutions for South African businesses.</p>
+                    <p class="footer-compliance">🇿🇦 POPIA &amp; GDPR Compliant</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/security-practices.html">Security Practices</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@qsdcybersolutions.co.za">hello@qsdcybersolutions.co.za</a></li>
+                        <li><a href="tel:+27310000000">+27 (0) 31 000 0000</a></li>
+                        <li>Durban, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QSD Cyber Solutions South Africa Pty(Ltd). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
